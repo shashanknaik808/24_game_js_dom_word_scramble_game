@@ -1,6 +1,7 @@
 const wordText = document.querySelector(".word"),
     hintText = document.querySelector(".hint span"),
-    refreshBtn = document.querySelector(".refresh-word");
+    refreshBtn = document.querySelector(".refresh-word"),
+    checkBtn = document.querySelector(".check-word");
 
 const initGame = () => {
 
@@ -20,3 +21,4 @@ initGame();
 
 
 refreshBtn.addEventListener("click", initGame);
+checkBtn.addEventListener("click", checkWord);
