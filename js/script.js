@@ -1,5 +1,6 @@
 const wordText = document.querySelector(".word"),
     hintText = document.querySelector(".hint span"),
+    timeText = document.querySelector(".time b"),
     inputField = document.querySelector("input"),
     refreshBtn = document.querySelector(".refresh-word"),
     checkBtn = document.querySelector(".check-word");
@@ -20,6 +21,8 @@ const initTimer = maxTime => {
 
 const initGame = () => {
 
+    initTimer(30);
+
     let randomObj = words[Math.floor(Math.random() * words.length)];
     let wordArray = randomObj.word.split("");
 
@@ -30,14 +33,15 @@ const initGame = () => {
 
     wordText.innerText = wordArray.join("");
     hintText.innerText = randomObj.hint;
-    correctWord = randomObj.word.toLowerCase();
+    correctWord = randomObj.word.toLowerCase();;
     inputField.value = "";
     inputField.setAttribute("maxlength", correctWord.length);
-    console.log(randomObj);
+
 }
 initGame();
 
 const checkWord = () => {
+
     let userWord = inputField.value.toLowerCase();
     if (!userWord) return alert("Please enter the word to check!");
     if (userWord !== correctWord) return alert(`Oops! ${userWord} is not a correct word`);
