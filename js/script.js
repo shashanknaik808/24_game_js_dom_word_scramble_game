@@ -17,6 +17,8 @@ const initGame = () => {
     wordText.innerText = wordArray.join("");
     hintText.innerText = randomObj.hint;
     correctWord = randomObj.word.toLowerCase();
+    inputField.value = "";
+    inputField.setAttribute("maxlength", correctWord.length);
     console.log(randomObj);
 }
 initGame();
