@@ -1,4 +1,5 @@
-const wordText = document.querySelector(".word");
+const wordText = document.querySelector(".word"),
+    hintText = document.querySelector(".hint span");
 
 const initGame = () => {
 
@@ -11,6 +12,7 @@ const initGame = () => {
     }
 
     wordText.innerText = wordArray.join("");
+    hintText.innerText = randomObj.hint;
     console.log(randomObj);
 }
 initGame();
